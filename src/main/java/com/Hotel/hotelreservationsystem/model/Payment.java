@@ -9,5 +9,5 @@ public class Payment {
     private LocalDate paymentDate;
     private String paymentMethod;
 
-    // Constructors, getters, and setters
+
 }
