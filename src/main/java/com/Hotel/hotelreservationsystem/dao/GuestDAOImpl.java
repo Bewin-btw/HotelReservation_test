@@ -25,7 +25,7 @@ public class GuestDAOImpl implements GuestDAO{
     }
 
     @Override
-    public Guest GetGuestById(int id) {
+    public Guest getGuestById(int id) {
         String sql = "SELECT * FROM Guests WHERE GuestID = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)){
@@ -37,8 +37,8 @@ public class GuestDAOImpl implements GuestDAO{
                         rs.getString("FirstName"),
                         rs.getString("LastName"),
                         rs.getString("Email"),
-                        rs.getString("PhoneNumber");
-                )
+                        rs.getString("PhoneNumber")
+                );
             }
         }catch (SQLException e){
             e.printStackTrace();
