@@ -1,5 +1,6 @@
-package com.Hotel.hotelreservationsystem.dao;
+package com.Hotel.hotelreservationsystem.dao.impl;
 
+import com.Hotel.hotelreservationsystem.dao.GuestDAO;
 import com.Hotel.hotelreservationsystem.model.Guest;
 import com.Hotel.hotelreservationsystem.util.DatabaseConnection;
 
@@ -7,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GuestDAOImpl implements GuestDAO{
+public class GuestDAOImpl implements GuestDAO {
 
     @Override
     public void addGuest(Guest guest){
@@ -20,7 +21,7 @@ public class GuestDAOImpl implements GuestDAO{
             pstmt.setString(4, guest.getPhoneNumber());
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
     }
 
@@ -41,7 +42,7 @@ public class GuestDAOImpl implements GuestDAO{
                 );
             }
         }catch (SQLException e){
-            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
         return null;
     }
@@ -63,7 +64,7 @@ public class GuestDAOImpl implements GuestDAO{
                 ));
             }
         } catch (SQLException e){
-            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
         return guests;
     }
@@ -80,7 +81,7 @@ public class GuestDAOImpl implements GuestDAO{
             pstmt.setString(4, guest.getPhoneNumber());
             pstmt.executeUpdate();
         } catch (SQLException e){
-            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
     }
 
@@ -92,7 +93,7 @@ public class GuestDAOImpl implements GuestDAO{
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e){
-            e.printStackTrace();
+            throw new IllegalArgumentException(e);
         }
     }
 }
