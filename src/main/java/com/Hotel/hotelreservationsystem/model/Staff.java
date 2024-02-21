@@ -66,12 +66,4 @@ public class Staff {
         setPosition(newPosition);
         System.out.println("Position updated successfully.");
     }
-
-    public boolean isValidEmail() {
-        return email != null && email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
-    }
-
-    public boolean isValidPhoneNumber() {
-        return phoneNumber != null && phoneNumber.matches("\\d{10}");
-    }
 }
