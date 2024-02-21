@@ -54,4 +54,16 @@ public class Room {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void displayRoomDetails() {
+        System.out.println("Room ID: " + roomID);
+        System.out.println("Room Number: " + roomNumber);
+        System.out.println("Room Type: " + roomType);
+        System.out.println("Price: $" + price);
+        System.out.println("Status: " + status);
+    }
+
+    public boolean isAvailable() {
+        return status.equalsIgnoreCase("available");
+    }
 }
