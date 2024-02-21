@@ -54,4 +54,16 @@ public class Staff {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void displayStaffDetails() {
+        System.out.println("Staff ID: " + staffID);
+        System.out.println("Name: " + firstName + " " + lastName);
+        System.out.println("Position: " + position);
+        System.out.println("Email: " + email);
+    }
+
+    public void updatePosition(String newPosition) {
+        setPosition(newPosition);
+        System.out.println("Position updated successfully.");
+    }
 }
