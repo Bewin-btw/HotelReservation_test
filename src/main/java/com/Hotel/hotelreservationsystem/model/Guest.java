@@ -65,4 +65,25 @@ public class Guest {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public void displayDetails() {
+        System.out.println("Guest ID: " + guestID);
+        System.out.println("Name: " + firstName + " " + lastName);
+        System.out.println("Email: " + email);
+        System.out.println("Phone Number: " + phoneNumber);
+    }
+
+    public void updateContactInfo(String newEmail, String newPhoneNumber) {
+        setEmail(newEmail);
+        setPhoneNumber(newPhoneNumber);
+        System.out.println("Contact information updated successfully.");
+    }
+
+    public boolean isValidEmail() {
+        return email != null && email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
+    }
+
+    public boolean isValidPhoneNumber() {
+        return phoneNumber != null && phoneNumber.matches("\\d{10}");
+    }
 }
