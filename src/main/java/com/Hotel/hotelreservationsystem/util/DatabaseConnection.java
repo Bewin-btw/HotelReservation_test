@@ -9,7 +9,7 @@ public class DatabaseConnection {
     private static final String USER = "bewin";
     private static final String PASSWORD = "0412";
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException { // Connection Pool (HikariPool)
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

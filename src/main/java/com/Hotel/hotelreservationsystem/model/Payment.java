@@ -17,6 +17,17 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentID=" + paymentID +
+                ", reservationID=" + reservationID +
+                ", amount=" + amount +
+                ", paymentDate=" + paymentDate +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
+    }
+
     public int getPaymentID() {
         return paymentID;
     }

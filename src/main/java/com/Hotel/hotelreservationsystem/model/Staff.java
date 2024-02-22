@@ -15,6 +15,17 @@ public class Staff {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "staffID=" + staffID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", position='" + position + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public int getStaffID() {
         return staffID;
     }

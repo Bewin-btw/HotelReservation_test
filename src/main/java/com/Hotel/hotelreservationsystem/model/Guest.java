@@ -7,6 +7,17 @@ public class Guest {
     private String email;
     private String phoneNumber;
 
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "guestID=" + guestID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
+
     public Guest(int guestID, String firstName, String lastName, String email, String phoneNumber) {
         this.guestID = guestID;
         this.firstName = firstName;

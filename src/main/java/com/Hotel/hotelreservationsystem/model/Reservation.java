@@ -21,6 +21,19 @@ public class Reservation {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "reservationID=" + reservationID +
+                ", guestID=" + guestID +
+                ", roomID=" + roomID +
+                ", checkInDate=" + checkInDate +
+                ", checkOutDate=" + checkOutDate +
+                ", numberOfGuests=" + numberOfGuests +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
     public int getReservationID() {
         return reservationID;
     }

@@ -19,6 +19,7 @@ public class RoomDAOImpl implements RoomDAO {
             pstmt.setString(2, room.getRoomType());
             pstmt.setDouble(3, room.getPrice());
             pstmt.setString(4, room.getStatus());
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
         }
