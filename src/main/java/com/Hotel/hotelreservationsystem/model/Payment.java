@@ -68,15 +68,4 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    public void displayPaymentDetails() {
-        System.out.println("Payment ID: " + paymentID);
-        System.out.println("Reservation ID: " + reservationID);
-        System.out.println("Amount: $" + amount);
-        System.out.println("Payment Date: " + paymentDate);
-        System.out.println("Payment Method: " + paymentMethod);
-    }
-
-    public boolean validatePayment() {
-        return amount > 0 && paymentMethod != null && !paymentMethod.isEmpty();
-    }
 }

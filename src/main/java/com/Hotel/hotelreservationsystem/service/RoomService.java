@@ -5,26 +5,14 @@ import com.Hotel.hotelreservationsystem.dao.impl.RoomDAOImpl;
 import com.Hotel.hotelreservationsystem.model.Room;
 import java.util.List;
 
-public class RoomService {
-    private RoomDAO roomDAO = new RoomDAOImpl();
+public interface RoomService {
+    void addRoom(Room room);
 
-    public void addRoom(Room room) {
-        roomDAO.addRoom(room);
-    }
+    Room getRoomById(int id);
 
-    public Room getRoomById(int id) {
-        return roomDAO.getRoomById(id);
-    }
+    List<Room> getAllRooms();
 
-    public List<Room> getAllRooms() {
-        return roomDAO.getAllRooms();
-    }
+    void updateRoom(Room room);
 
-    public void updateRoom(Room room) {
-        roomDAO.updateRoom(room);
-    }
-
-    public void deleteRoom(int id) {
-        roomDAO.deleteRoom(id);
-    }
+    void deleteRoom(int id);
 }

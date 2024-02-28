@@ -1,18 +1,28 @@
 package com.Hotel.hotelreservationsystem;
 
+import com.Hotel.hotelreservationsystem.dao.impl.GuestDAOImpl;
 import com.Hotel.hotelreservationsystem.model.*;
 import com.Hotel.hotelreservationsystem.service.*;
+import com.Hotel.hotelreservationsystem.service.impl.*;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
 
 public class HotelReservationCLI {
-    private static RoomService roomService = new RoomService();
-    private static ReservationService reservationService = new ReservationService();
-    private static GuestService guestService = new GuestService();
-    private static StaffService staffService = new StaffService();
-    private static PaymentService paymentService = new PaymentService();
+    // Work on Dependency Injection (Inversion of Control [Инверсия зависимостей], Dependency Injection (@Autowired, Constructor Injection, Field Injection, Setter Injection))
+    // Move Service classes into interfaces and implement them
+    // Try to make menu methods non-static
+    // Model classes shouldn't have logic
+    // Connection Pool
+    // Design Patterns (Abstract Factory, Factory Method, Builder, Strategy, State, Adapter, Decorator)
+    // application.properties
+    // Lombok
+
+    private static RoomService roomService = new RoomServiceImpl(); // Done
+    private static ReservationService reservationService = new ReservationServiceImpl(); // Done
+    private static GuestService guestService = new GuestServiceImpl(new GuestDAOImpl()); // Done
+    private static StaffService staffService = new StaffServiceImpl(); // Done
+    private static PaymentService paymentService = new PaymentServiceImpl(); // Done
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

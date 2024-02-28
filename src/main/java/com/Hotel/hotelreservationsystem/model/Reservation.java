@@ -1,6 +1,7 @@
 package com.Hotel.hotelreservationsystem.model;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Reservation {
     private int reservationID;
@@ -90,17 +91,4 @@ public class Reservation {
         this.status = status;
     }
 
-     public void displayReservationDetails() {
-        System.out.println("Reservation ID: " + reservationID);
-        System.out.println("Guest ID: " + guestID);
-        System.out.println("Room ID: " + roomID);
-        System.out.println("Check-In Date: " + checkInDate);
-        System.out.println("Check-Out Date: " + checkOutDate);
-        System.out.println("Number of Guests: " + numberOfGuests);
-        System.out.println("Status: " + status);
-    }
-
-    public int getReservationDuration() {
-        return Period.between(checkInDate, checkOutDate).getDays();
-    }
 }

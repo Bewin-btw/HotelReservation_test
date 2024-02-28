@@ -1,33 +1,18 @@
 package com.Hotel.hotelreservationsystem.service;
 
-import com.Hotel.hotelreservationsystem.dao.GuestDAO;
-import com.Hotel.hotelreservationsystem.dao.StaffDAO;
-import com.Hotel.hotelreservationsystem.dao.impl.GuestDAOImpl;
 import com.Hotel.hotelreservationsystem.model.Guest;
-import com.Hotel.hotelreservationsystem.model.Staff;
 
 import java.util.List;
 
-public class GuestService {
-    private GuestDAO guestDAO = new GuestDAOImpl();
+public interface GuestService {
 
-    public void addGuest(Guest guest){
-        guestDAO.addGuest(guest);
-    }
+    void addGuest(Guest guest);
 
-    public Guest getGuestByID(int id) {
-        return guestDAO.getGuestById(id);
-    }
+    Guest getGuestByID(int id);
 
-    public List<Guest> getAllGuests(){
-        return guestDAO.getAllGuests();
-    }
+    List<Guest> getAllGuests();
 
-    public void updateGuest(Guest guest){
-        guestDAO.updateGuest(guest);
-    }
+    void updateGuest(Guest guest);
 
-    public void deleteGuest(int id){
-        guestDAO.deleteGuest(id);
-    }
+    void deleteGuest(int id);
 }

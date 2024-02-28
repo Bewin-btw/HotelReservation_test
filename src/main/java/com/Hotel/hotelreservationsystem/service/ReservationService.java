@@ -5,26 +5,14 @@ import com.Hotel.hotelreservationsystem.dao.impl.ReservationDAOImpl;
 import com.Hotel.hotelreservationsystem.model.Reservation;
 import java.util.List;
 
-public class ReservationService {
-    private ReservationDAO reservationDAO = new ReservationDAOImpl();
+public interface ReservationService {
+    void createReservation(Reservation reservation);
 
-    public void createReservation(Reservation reservation) {
-        reservationDAO.addReservation(reservation);
-    }
+    Reservation getReservationById(int id);
 
-    public Reservation getReservationById(int id) {
-        return reservationDAO.getReservationById(id);
-    }
+    List<Reservation> getAllReservations();
 
-    public List<Reservation> getAllReservations() {
-        return reservationDAO.getAllReservations();
-    }
+    void updateReservation(Reservation reservation);
 
-    public void updateReservation(Reservation reservation) {
-        reservationDAO.updateReservation(reservation);
-    }
-
-    public void cancelReservation(int id) {
-        reservationDAO.deleteReservation(id);
-    }
+    void cancelReservation(int id);
 }

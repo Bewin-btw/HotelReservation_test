@@ -5,26 +5,14 @@ import com.Hotel.hotelreservationsystem.dao.impl.StaffDAOImpl;
 import com.Hotel.hotelreservationsystem.model.Staff;
 import java.util.List;
 
-public class StaffService {
-    private StaffDAO staffDAO = new StaffDAOImpl();
+public interface StaffService {
+    void addStaff(Staff staff);
 
-    public void addStaff(Staff staff) {
-        staffDAO.addStaff(staff);
-    }
+    Staff getStaffById(int id);
 
-    public Staff getStaffById(int id) {
-        return staffDAO.getStaffById(id);
-    }
+    List<Staff> getAllStaff();
 
-    public List<Staff> getAllStaff() {
-        return staffDAO.getAllStaff();
-    }
+    void updateStaff(Staff staff);
 
-    public void updateStaff(Staff staff) {
-        staffDAO.updateStaff(staff);
-    }
-
-    public void deleteStaff(int id) {
-        staffDAO.deleteStaff(id);
-    }
+    void deleteStaff(int id);
 }
