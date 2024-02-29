@@ -10,22 +10,31 @@ import java.util.Scanner;
 
 public class HotelReservationCLI {
     // Work on Dependency Injection (Inversion of Control [Инверсия зависимостей], Dependency Injection (@Autowired, Constructor Injection, Field Injection, Setter Injection))
-    // Move Service classes into interfaces and implement them
-    // Try to make menu methods non-static
-    // Model classes shouldn't have logic
-    // Connection Pool
+    // Move Service classes into interfaces and implement them #DONE
+    // Try to make menu methods non-static #DONE
+    // Model classes shouldn't have logic #DONE
+    // Connection Pool #DONE
     // Design Patterns (Abstract Factory, Factory Method, Builder, Strategy, State, Adapter, Decorator)
-    // application.properties
+    // application.properties #DONE
     // Lombok
 
-    private static RoomService roomService = new RoomServiceImpl(); // Done
-    private static ReservationService reservationService = new ReservationServiceImpl(); // Done
-    private static GuestService guestService = new GuestServiceImpl(new GuestDAOImpl()); // Done
-    private static StaffService staffService = new StaffServiceImpl(); // Done
-    private static PaymentService paymentService = new PaymentServiceImpl(); // Done
+    private RoomService roomService;
+    private ReservationService reservationService;
+    private GuestService guestService;
+    private StaffService staffService;
+    private PaymentService paymentService;
+    private Scanner scanner;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public HotelReservationCLI() {
+        this.roomService = new RoomServiceImpl(); // Done
+        this.reservationService = new ReservationServiceImpl(); // Done
+        this.guestService = new GuestServiceImpl(new GuestDAOImpl()); // Done
+        this.staffService = new StaffServiceImpl(); // Done
+        this.paymentService = new PaymentServiceImpl(); // Done
+        this.scanner = new Scanner(System.in);
+    }
+
+    public void start() {
         while (true) {
             System.out.println("\nWelcome to the Hotel Reservation System CLI");
             System.out.println("1. Manage Rooms");
@@ -63,7 +72,7 @@ public class HotelReservationCLI {
         }
     }
 
-    private static void manageRooms(Scanner scanner) {
+    private void manageRooms(Scanner scanner) {
         System.out.println("\nRoom Management");
         System.out.println("1. List all rooms");
         System.out.println("2. Add a new room");
@@ -126,7 +135,7 @@ public class HotelReservationCLI {
     }
 
 
-    private static void manageReservations(Scanner scanner) {
+    private void manageReservations(Scanner scanner) {
         System.out.println("\nReservation Management");
         System.out.println("1. Create a new reservation");
         System.out.println("2. View a reservation");
@@ -201,7 +210,7 @@ public class HotelReservationCLI {
     }
 
 
-    private static void manageGuests(Scanner scanner) {
+    private void manageGuests(Scanner scanner) {
         System.out.println("\nGuest Management");
         System.out.println("1. List all guests");
         System.out.println("2. Add a new guest");
@@ -262,7 +271,7 @@ public class HotelReservationCLI {
     }
 
 
-    private static void manageStaff(Scanner scanner) {
+    private void manageStaff(Scanner scanner) {
         System.out.println("\nStaff Management");
         System.out.println("1. List all staff");
         System.out.println("2. Add new staff");
@@ -325,7 +334,7 @@ public class HotelReservationCLI {
     }
 
 
-    private static void processPayments(Scanner scanner) {
+    private void processPayments(Scanner scanner) {
         System.out.println("\nPayment Processing");
         System.out.println("1. Process a new payment");
         System.out.print("Enter your choice: ");
@@ -351,5 +360,9 @@ public class HotelReservationCLI {
             default:
                 System.out.println("Invalid option.");
         }
+    }
+    public static void main(String[] args) {
+        HotelReservationCLI cli = new HotelReservationCLI();
+        cli.start();
     }
 }
